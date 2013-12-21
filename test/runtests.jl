@@ -21,7 +21,8 @@ my_tests = ["extras.jl",
             "grouping.jl",
             "iteration.jl",
             #"test/colfuncs.jl",
-            "duplicates.jl"]
+            "duplicates.jl",
+            "vcat.jl"]
 
 println("Running tests:")
 
