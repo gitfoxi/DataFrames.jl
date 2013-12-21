@@ -1,12 +1,12 @@
 a = eye(100)
 b = eye(100)
 
-dm_a = dataeye(100)
-dm_b = dataeye(100)
+dm_a = @data eye(100)
+dm_b = @data eye(100)
 
-dm_a_na = dataeye(100)
+dm_a_na = @data eye(100)
 dm_a_na[:, :] = NA
-dm_b_na = dataeye(100)
+dm_b_na = @data eye(100)
 dm_b_na[:, :] = NA
 
 f1() = *(a, b)
@@ -27,7 +27,7 @@ df3 = benchmark(f3,
                 1_000)
 
 # TODO: Keep permanent record
-printtable(rbind(df1, df2, df3), header=false)
+printtable(vcat(df1, df2, df3), header=false)
 
 # Compare with R
 # We're 10x as fast!
